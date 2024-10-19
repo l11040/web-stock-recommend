@@ -6,7 +6,9 @@ services:
     environment:
       - MYSQL_DATABASE=stock-recommend-db
       - MYSQL_ROOT_PASSWORD=qwer1234
+      - MYSQL_CHARSET=utf8mb4 # UTF-8 인코딩 설정
     ports:
       - "3306:3306"
     volumes:
       - ./data/mysql-data:/var/lib/mysql # 데이터가 저장될 로컬 경로
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf # MariaDB 설정 파일을 추가하여 인코딩 설정
