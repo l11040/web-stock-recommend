@@ -9,4 +9,4 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - /my/local/path/mysql-data:/var/lib/mysql # 데이터가 저장될 로컬 경로
+      - ./data/mysql-data:/var/lib/mysql # 데이터가 저장될 로컬 경로
