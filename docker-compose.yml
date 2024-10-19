@@ -1,0 +1,12 @@
+version: "3"
+services:
+  mariadb:
+    image: mariadb:latest # 공식 MariaDB 이미지를 사용
+    container_name: stock-recommend-db
+    environment:
+      - MYSQL_DATABASE=stock-recommend-db
+      - MYSQL_ROOT_PASSWORD=qwer1234
+    ports:
+      - "3306:3306"
+    volumes:
+      - /my/local/path/mysql-data:/var/lib/mysql # 데이터가 저장될 로컬 경로
